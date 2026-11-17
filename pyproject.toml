@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pychess-desktop"
+version = "0.1.0"
+description = "A Tk desktop chess GUI powered by the pyfischer chess engine"
+requires-python = ">=3.10"
+dependencies = [
+    "python-chess>=1.11",
+    "resvg_py>=0.5,<1.0",
+]
+
+[project.optional-dependencies]
+build = ["pyinstaller>=6.10"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+pychess = ["assets/*.svg", "assets/*.txt", "assets/*.ico"]
